@@ -1,0 +1,210 @@
+/* @global/colors.css */
+:root {
+    /* slate gray */
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-500: #6b7280;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+
+    /* main color */
+    --main-500: #3b82f6;
+    --main-600: #2563eb;
+
+    /* gradients */
+    --pink-gradient: linear-gradient(#e879f9, #ec4899);
+    --blue-gradient: linear-gradient(#0ea5e9, #67e8f9);
+
+    /* special colors */
+    --marker: #ffff7a;
+}
+/* @global/layout.css */
+/* all reset/normalization you need */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* consistent whitespace */
+ul,
+ol,
+figure,
+pre {
+    margin: 2em 0;
+}
+
+/* page layout */
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2% 5%;
+
+    > header nav {
+        justify-content: space-between;
+        margin-bottom: 4rem;
+        display: flex;
+
+        /*  avatar image */
+        > a:first-child {
+            background: url(/img/avatar-rounded.jpg) 0 50% no-repeat;
+            background-size: 2em;
+            padding-left: 2.5em;
+        }
+
+        a {
+            padding: 1em 0;
+        }
+    }
+
+    /* content area: hero and sections */
+    article {
+        > header {
+            margin-bottom: 2rem;
+        }
+
+        > section {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+    }
+
+    /* global footer */
+    > footer {
+        border-top: 1px solid var(--gray-200);
+        justify-content: space-between;
+        margin-top: 6rem;
+        padding: 1rem 0;
+        display: flex;
+
+        /* social icons */
+        > :last-child {
+            display: flex;
+            gap: 0.5em;
+            a:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+/* @global/typography.css */
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        Avenir Next,
+        Segoe UI,
+        Roboto;
+}
+
+/* heading and subtitle */
+h1 {
+    letter-spacing: -0.03em;
+    font-size: 2.6rem;
+
+    &,
+    + p {
+        text-align: center;
+        text-wrap: balance;
+        max-width: 40rem;
+        margin: 0 auto 0.2em;
+    }
+
+    + p {
+        font-size: 1.15em;
+        font-weight: 300;
+        margin-bottom: 2em;
+    }
+}
+
+/* links */
+a {
+    text-decoration: none;
+
+    /* navigational links */
+    nav & {
+        font-weight: 500;
+        color: var(--gray-900);
+
+        &[aria-selected] {
+            text-decoration: 2px underline var(--main-500);
+            text-underline-offset: 8px;
+        }
+    }
+}
+
+/* bulk content */
+p,
+li {
+    color: var(--gray-500);
+    line-height: 1.65;
+    strong {
+        color: var(--gray-800);
+    }
+}
+/* @global/content.css */
+/* Styling for technical content */
+
+article a {
+    text-decoration: underline var(--main-500) 1px;
+    text-underline-offset: 3px;
+    color: var(--gray-800);
+    font-weight: 500;
+
+    &:hover {
+        text-decoration-color: var(--main-600);
+        text-decoration-thickness: 2px;
+        color: black;
+    }
+}
+
+h2 {
+    color: var(--gray-900);
+    font-size: 1.1rem;
+    margin: 4em 0 0;
+    font-weight: 500;
+}
+
+li {
+    text-wrap: balance;
+    margin-bottom: 1em;
+}
+
+/* syntax highligted code */
+pre {
+    --glow-padding: 2em;
+    font-size: 105%;
+}
+
+/* images and code blocks */
+img,
+pre {
+    border-radius: 8px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+blockquote {
+    border-left: 5px solid var(--gray-900);
+    text-wrap: balance;
+    padding-left: 1.5em;
+    margin: 2.5em 0;
+
+    p {
+        font-weight: 600;
+        line-height: 1.5;
+        font-size: 140%;
+        color: var(--gray-900);
+    }
+
+    strong {
+        background-color: var(--marker);
+        font-weight: inherit;
+        padding: 0.1em 0.2em;
+        margin-inline: -0.2em;
+    }
+}

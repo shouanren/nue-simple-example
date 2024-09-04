@@ -1,0 +1,29 @@
+<header>
+    <a href="/">Back to home</a>
+    <nav>
+        <a :for="el in social" :href="el.url">
+            <img class="icon" src="/img/{el.icon}.svg" />
+        </a>
+    </nav>
+</header>
+<main>
+    <h1>{title}</h1>
+    <p>
+        <pretty-date :date />Article author:
+        <a href="https:x.com/the_shorekeeper">{credits}</a>
+    </p>
+    <article>
+        <slot for="content" />
+    </article>
+    <aside>
+        <a :for="post in posts" :href="post.url">
+            <h2>{post.title}</h2>
+            <p>{post.date}</p>
+            <p>{post.pubDate}</p>
+        </a>
+    </aside>
+</main>
+<footer>
+    <p>{fullname} - { new Date().getFullYear()}</p>
+    <q>{slogan}</q>
+</footer>
